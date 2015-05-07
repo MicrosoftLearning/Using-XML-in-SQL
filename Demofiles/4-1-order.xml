@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<order xmlns="http://aw/orderschema" id="123456" date="2015-01-01">
+  <salesperson id="123">
+    <name>Naomi Sharp</name>
+  </salesperson>
+  <customer id="921">
+    <name>Dan Drayton</name>
+  </customer>
+  <!-- an order may contain multiple items -->
+  <items>
+    <item id="561" quantity="1"/>
+    <item id="127" quantity="2"/>
+  </items>
+</order>

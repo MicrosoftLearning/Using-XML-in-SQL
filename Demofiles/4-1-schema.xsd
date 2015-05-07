@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema  targetNamespace="http://aw/orderschema"
+            xmlns="http://aw/orderschema"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified">
+
+  <xs:complexType name="person">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="itemlist">
+    <xs:sequence>
+      <xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="id" type="xs:positiveInteger"/>
+          <xs:attribute name="quantity" type="xs:positiveInteger"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="order">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="salesperson" type="person" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="customer" type="person" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="items" type="itemlist" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+      <xs:attribute name="date" type="xs:date" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
